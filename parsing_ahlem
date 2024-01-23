@@ -1,0 +1,42 @@
+
+
+
+echo cmd 
+hola word 
+> redir out 
+a outfile
+
+simple cmd :cmd :  echo 
+			argument :hola
+			>
+pipe:
+
+
+That is, each command reads the previous command’s output. This connection
+is performed before any redirections specified by command1.
+
+cmd1 ->pipe ->outfile 1
+
+
+if simple cmd :
+	if built in => built in
+	if !built in => execve
+
+if multi cmd :
+	cmd1 out1 | in cmd2 out 3
+
+	cmd ->fd[1]->fd[0]->out1
+
+	
+
+	ls >out | fd[1]== fd[0]
+
+	ls -> fd[1] === fd[0] > out 
+
+
+issue : closin stdin sans faire expres
+	after the lasst command
+	in the multiple commands only
+
+
+/******************************************************/
